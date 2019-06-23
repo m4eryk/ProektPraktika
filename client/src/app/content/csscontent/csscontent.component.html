@@ -1,0 +1,25 @@
+<div class="wrapper">
+  <div class="lef-bar">
+    <mat-tree [dataSource]="dataSource" [treeControl]="treeControl" class="tab">
+      <!-- This is the tree node template for leaf nodes -->
+      <mat-tree-node mat-button *matTreeNodeDef="let node" class="node" (click)="selectPost(node.name)">
+        <button mat-button >{{node.name}}</button>
+        <!-- use a disabled button to provide padding for tree leaf -->
+        
+      </mat-tree-node>
+      <!-- This is the tree node template for expandable nodes -->
+      <mat-tree-node *matTreeNodeDef="let node;when: hasChild" class="tab" >
+        <button mat-icon-button matTreeNodeToggle
+                [attr.aria-label]="'toggle ' + node.name">
+          <mat-icon class="mat-icon-rtl-mirror">
+            {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+          </mat-icon>
+        </button>
+        {{node.name}}
+      </mat-tree-node>
+    </mat-tree>
+  </div>
+  <div class="right-bar">
+    <app-post *ngIf="post" [post]="post" ></app-post>
+  </div>
+</div>

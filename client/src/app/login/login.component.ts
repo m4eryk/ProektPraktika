@@ -8,8 +8,10 @@ import { Router } from "@angular/router"
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
-  loginUserData={}
+  
+  auth;
+  error=false;
+  loginUserData={};
   constructor( private _auth:AuthService,
     private _router: Router ) { }
 
@@ -22,9 +24,11 @@ export class LoginComponent implements OnInit {
         res => {
           console.log(res);
           localStorage.setItem('token', res.token);
-          this._router.navigate(['/content']);
+          this.error=false;
+          this.auth=true;
+          setTimeout(()=>{ this._router.navigate(['/content']) }, 4000);
         },
-        err => console.log(err)
+        err => { this.error=true; }
       )
   }
 

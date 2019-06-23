@@ -1,0 +1,31 @@
+button:active, button:focus {
+  outline: none;
+  border: 0;
+}
+button::-moz-focus-inner {
+  outline: none;
+  border: 0;
+}
+button::-webkit-focus-inner{
+  outline: none;
+  border: 0;
+}
+img::-webkit-focus-inner{
+  outline: none;
+  border: 0;
+}
+img:active, img:focus {
+  outline: none;
+  border: 0;
+}
+img{
+  cursor: pointer;
+}
+.off-scroll::-webkit-scrollbar{
+  display: none;
+  border: none;
+}
+::-webkit-scrollbar{
+  display: none;
+  border: none;
+}

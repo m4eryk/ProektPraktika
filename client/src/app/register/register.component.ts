@@ -9,6 +9,8 @@ import { Router } from "@angular/router"
 })
 export class RegisterComponent implements OnInit {
 
+  auth;
+  error=false;
   registerUserData = {}
   constructor( private _auth: AuthService,
     private _router: Router ) { }
@@ -23,9 +25,11 @@ export class RegisterComponent implements OnInit {
         res => {
           console.log(res);
           localStorage.setItem('token', res.token);
-          this._router.navigate(['/content']);
+          this.error=false;
+          this.auth=true;
+          setTimeout(()=>{ this._router.navigate(['/content']) }, 4000);
         },
-        err => console.log(err)
+        err => { this.error=true; }
       )
   }
 }

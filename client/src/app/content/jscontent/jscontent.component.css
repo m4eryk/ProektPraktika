@@ -1,0 +1,44 @@
+button:active, button:focus {
+    outline: none;
+    border: 0;
+}
+button::-moz-focus-inner {
+    outline: none;
+    border: 0;
+}   
+    button::-webkit-focus-inner{
+    outline: none;
+    border: 0;
+}
+.wrapper{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+.lef-bar{
+    width: 450px;
+    overflow-y: scroll;
+}
+.tab{
+    height: 100%;
+    font-size: 24px;
+}
+.right-bar{
+    overflow-y: scroll;
+    width: 100%;
+    height: 100%;
+    border-left: 1px solid #E0E0E0;
+}
+::-webkit-scrollbar{
+    background: none;
+}
+.node{
+    border-bottom: 1px solid #E0E0E0;
+    cursor: pointer;
+    margin-top: 10;
+    padding: 0;
+    margin-left: 60px;
+    font-size: 12px;
+}

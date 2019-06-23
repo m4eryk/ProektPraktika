@@ -11,6 +11,17 @@ import { WelcomPageComponent } from './welcom-page/welcom-page.component';
 import { AuthService } from './auth.service';
 import { AuthGuard } from './auth.guard';
 import { TokenInterceptorService } from './token-interceptor.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material/material.module';
+import { JScontentComponent } from './content/jscontent/jscontent.component';
+import { CSScontentComponent } from './content/csscontent/csscontent.component';
+import { HTMLcontentComponent } from './content/htmlcontent/htmlcontent.component';
+import { PostComponent } from './content/post/post.component';
+import { AdminLoginComponent } from './admin-login/admin-login.component';
+import { AdminComponent } from './admin/admin.component';
+import { AdminJssComponent } from './admin-jss/admin-jss.component';
+import { AdminCssComponent } from './admin-css/admin-css.component';
+import { AdminHtmlComponent } from './admin-html/admin-html.component';
 
 @NgModule({
   declarations: [
@@ -18,13 +29,24 @@ import { TokenInterceptorService } from './token-interceptor.service';
     RegisterComponent,
     LoginComponent,
     ContentComponent,
-    WelcomPageComponent
+    WelcomPageComponent,
+    JScontentComponent,
+    CSScontentComponent,
+    HTMLcontentComponent,
+    PostComponent,
+    AdminLoginComponent,
+    AdminComponent,
+    AdminJssComponent,
+    AdminCssComponent,
+    AdminHtmlComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MaterialModule
   ],
   providers: [AuthService, AuthGuard, {
     provide: HTTP_INTERCEPTORS,

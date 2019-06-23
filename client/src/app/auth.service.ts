@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 export class AuthService {
   private _registerUrl = 'http://localhost:3000/api/register';
   private _loginUrl = 'http://localhost:3000/api/login';
-
+  private _adminUrl = 'http://localhost:3000/api/admin';
 
   constructor(private http: HttpClient, private _router: Router) { }
 
@@ -20,6 +20,11 @@ export class AuthService {
 
   loginUser(user){
     return this.http.post<any>(this._loginUrl, user);
+  }
+
+  loginAdmin(admin){
+    admin.isAdmin=true;
+    return this.http.post<any>(this._adminUrl, admin);
   }
 
   loggedIn(){
